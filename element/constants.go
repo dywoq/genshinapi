@@ -1,12 +1,12 @@
 package element
 
 const (
-	Anemo   Type = "Anemo"
-	Cryo    Type = "Cryo"
-	Dendro  Type = "Dendro"
-	Electro Type = "Electro"
-	Geo     Type = "Geo"
-	Hydro   Type = "Hydro"
-	Pyro    Type = "Pyro"
-	None    Type = "None" // for travelers-siblings
+	Anemo   Type = "anemo"
+	Cryo    Type = "cryo"
+	Dendro  Type = "dendro"
+	Electro Type = "electro"
+	Geo     Type = "geo"
+	Hydro   Type = "hydro"
+	Pyro    Type = "pyro"
+	None    Type = "none" // for traveler
 )
