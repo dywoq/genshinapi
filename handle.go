@@ -2,7 +2,7 @@ package main
 
 import "net/http"
 
-func Handle(w http.ResponseWriter, r *http.Request) {
+func handle(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
