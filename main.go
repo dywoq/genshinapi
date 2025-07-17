@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 )
@@ -9,7 +8,8 @@ import (
 func main() {
 	fs := http.FileServer(http.Dir("/static/"))
 
-	fmt.Println("Starting server at 8080 port")
+	// for debug purposes
+	// fmt.Println("Starting server at 8080 port")
 
 	http.HandleFunc("/", handle)
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
