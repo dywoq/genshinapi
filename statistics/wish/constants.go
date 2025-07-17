@@ -1,4 +1,4 @@
-package kind
+package wish
 
 const (
 	EventExclusive                                 Type = "event-exclusive"

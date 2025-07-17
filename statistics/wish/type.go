@@ -1,4 +1,4 @@
-package kind
+package wish
 
 import "github.com/dywoq/genshinapi/statistics"
 
