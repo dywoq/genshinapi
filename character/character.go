@@ -11,11 +11,12 @@ import (
 )
 
 type Character struct {
+	Name    string          `json:"name"`
 	Quality quality.Type    `json:"quality"`
 	Element element.Type    `json:"element"`
 	Weapon  weapon.Type     `json:"weapon"`
 	Region  region.Type     `json:"region"`
 	Model   model.Type      `json:"model"`
 	Version version.Version `json:"version"`
-	Kind    wish.Type       `json:"wish"`
+	Wish    wish.Type       `json:"wish"`
 }
