@@ -6,8 +6,9 @@ type Type string
 
 func (t Type) Check() error {
 	validTypes := map[Type]struct{}{
-		EventExclusive:                                 {},
-		CannotBeObtainedFromWishes:                     {},
+		EventExclusive:             {},
+		Standard:                   {},
+		CannotBeObtainedFromWishes: {},
 		CannotBeObtainedFromCharacterWeaponEventWishes: {},
 	}
 
