@@ -11,14 +11,14 @@ import (
 	"github.com/dywoq/genshinapi/statistics/wish"
 )
 
-func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, k wish.Type) (*Character, error) {
+func New(n string, q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, wish wish.Type) (*Character, error) {
 	checks := map[statistics.Checker]struct{}{
 		q: {},
 		e: {},
 		w: {},
 		r: {},
 		m: {},
-		k: {},
+		wish: {},
 		v: {},
 	}
 
@@ -28,5 +28,5 @@ func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.T
 			return &Character{}, err
 		}
 	}
-	return &Character{q, e, w, r, m, v, k}, nil
+	return &Character{n, q, e, w, r, m, v, wish}, nil
 }

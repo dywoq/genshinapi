@@ -1,0 +1,13 @@
+{
+	"name": "Alhaitham",
+	"quality": "fiveStar",
+	"element": "dendro",
+	"weapon": "sword",
+	"region": "sumeru",
+	"model": "tallMale",
+	"version": {
+		"major": 3,
+		"minor": 4
+	},
+	"wish": "event-exclusive"
+}
