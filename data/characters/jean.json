@@ -1,0 +1,13 @@
+{
+	"name": "Jean",
+	"quality": "fiveStar",
+	"element": "anemo",
+	"weapon": "sword",
+	"region": "mondstadt",
+	"model": "tallFemale",
+	"version": {
+		"major": 1,
+		"minor": 0
+	},
+	"wish": "standard"
+}
