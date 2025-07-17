@@ -22,13 +22,14 @@ type Character struct {
 }
 
 func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, k wish.Type) (*Character, error) {
-	var strChecks = map[statistics.Checker[string]]struct{}{
+	var strChecks = map[statistics.Checker]struct{}{
 		q: {},
 		e: {},
 		w: {},
 		r: {},
 		m: {},
 		k: {},
+		v: {},
 	}
 
 	for strCheck := range strChecks {
@@ -37,10 +38,5 @@ func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.T
 			return &Character{}, err
 		}
 	}
-
-	if err := v.Check(); err != nil {
-		return &Character{}, err
-	}
-
 	return &Character{q, e, w, r, m, v, k}, nil
 }
