@@ -1,0 +1,13 @@
+{
+	"name": "Chasca",
+	"quality": "tallFemale",
+	"element": "anemo",
+	"weapon": "bow",
+	"region": "natlan",
+	"model": "tallFemale",
+	"version": {
+		"major": 5,
+		"minor": 2
+	},
+	"wish": "event-exclusive"
+}
