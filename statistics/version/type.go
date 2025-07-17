@@ -8,7 +8,7 @@ type Version struct {
 }
 
 func (v Version) Check() error {
-	var validTypes = map[Version]struct{}{
+	validTypes := map[Version]struct{}{
 		Version10: {},
 		Version11: {},
 		Version12: {},
