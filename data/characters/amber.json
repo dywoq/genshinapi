@@ -1,0 +1,13 @@
+{
+	"name": "Amber",
+	"quality": "fourStar",
+	"element": "pyro",
+	"weapon": "bow",
+	"region": "mondstadt",
+	"model": "mediumFemale",
+	"version": {
+		"major": 1,
+		"minor": 0
+	},
+	"wish": "cannot-be-obtained-from-character-weapon-event-wishes"
+}
