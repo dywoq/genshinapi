@@ -3,12 +3,12 @@ package character
 import (
 	"github.com/dywoq/genshinapi/statistics"
 	"github.com/dywoq/genshinapi/statistics/element"
-	"github.com/dywoq/genshinapi/statistics/wish"
 	"github.com/dywoq/genshinapi/statistics/model"
 	"github.com/dywoq/genshinapi/statistics/quality"
 	"github.com/dywoq/genshinapi/statistics/region"
 	"github.com/dywoq/genshinapi/statistics/version"
 	"github.com/dywoq/genshinapi/statistics/weapon"
+	"github.com/dywoq/genshinapi/statistics/wish"
 )
 
 type Character struct {
@@ -22,7 +22,7 @@ type Character struct {
 }
 
 func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, k wish.Type) (*Character, error) {
-	var strChecks = map[statistics.Checker]struct{}{
+	checks := map[statistics.Checker]struct{}{
 		q: {},
 		e: {},
 		w: {},
@@ -32,8 +32,8 @@ func New(q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.T
 		v: {},
 	}
 
-	for strCheck := range strChecks {
-		err := strCheck.Check()
+	for check := range checks {
+		err := check.Check()
 		if err != nil {
 			return &Character{}, err
 		}
