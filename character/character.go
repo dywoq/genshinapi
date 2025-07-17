@@ -17,5 +17,5 @@ type Character struct {
 	Region  region.Type     `json:"region"`
 	Model   model.Type      `json:"model"`
 	Version version.Version `json:"version"`
-	Kind    kind.Kind       `json:"kind"`
+	Kind    kind.Type       `json:"kind"`
 }
