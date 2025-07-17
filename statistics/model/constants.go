@@ -1,9 +1,9 @@
 package model
 
 const (
-	TallMale     Model = "tall-male"
-	TallFemale   Model = "tall-female"
-	MediumMale   Model = "medium-male"
-	MediumFemale Model = "medium-female"
-	ShortFemale  Model = "short-female"
+	TallMale     Type = "tall-male"
+	TallFemale   Type = "tall-female"
+	MediumMale   Type = "medium-male"
+	MediumFemale Type = "medium-female"
+	ShortFemale  Type = "short-female"
 )

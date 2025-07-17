@@ -1,3 +1,3 @@
 package model
 
-type Model string
+type Type string

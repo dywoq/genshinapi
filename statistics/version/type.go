@@ -1,6 +1,6 @@
 package version
 
-type Struct struct {
+type Version struct {
 	Major int `json:"major"`
 	Minor int `json:"minor"`
 }
