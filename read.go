@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/dywoq/genshinapi/character"
 )
@@ -18,7 +19,7 @@ func readCharacters() ([]character.Character, error) {
 		if err != nil {
 			return err
 		}
-		if !d.IsDir() {
+		if !d.IsDir() && strings.HasSuffix(d.Name(), ".json") {
 			ch, err := processCharacterFile(path)
 			if err != nil {
 				return err
@@ -43,6 +44,6 @@ func processCharacterFile(file string) (character.Character, error) {
 	err = json.Unmarshal(f, &c)
 	if err != nil {
 		return character.Character{}, nil
-	}
+	} 
 	return c, nil
 }

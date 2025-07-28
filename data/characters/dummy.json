@@ -1,0 +1,13 @@
+{
+	"name": "dummy",
+	"quality": "fiveStar",
+	"element": "pyro",
+	"weapon": "sword",
+	"region": "natlan",
+	"model": "mediumMale",
+	"version": {
+		"major": 6,
+		"minor": 0
+	},
+	"wish": "event-exclusive"
+}
