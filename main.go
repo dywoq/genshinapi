@@ -1,19 +1,26 @@
 package main
 
 import (
-	"log"
 	"net/http"
+
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
-	fs := http.FileServer(http.Dir("/static/"))
+	e := echo.New()
 
-	// for debug purposes
-	// fmt.Println("Starting server at 8080 port")
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-	http.HandleFunc("/", handle)
-	http.HandleFunc("/characters/", handleCharacters)
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{http.MethodGet},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAuthorization},
+	}))
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	e.GET("/", mainHandler)
+	e.GET("/characters/", charactersHandler)
+
+	e.Logger.Fatal(e.Start(":8080"))
 }
