@@ -1,8 +1,8 @@
 package wish
 
 const (
-	EventExclusive                                 Type = "event-exclusive"
+	EventExclusive                                 Type = "eventExclusive"
 	Standard                                       Type = "standard"
-	CannotBeObtainedFromWishes                     Type = "cannot-be-obtained-from-wishes"
-	CannotBeObtainedFromCharacterWeaponEventWishes Type = "cannot-be-obtained-from-character-weapon-event-wishes"
+	CannotBeObtainedFromWishes                     Type = "cannotBeObtainedFromWishes"
+	CannotBeObtainedFromCharacterWeaponEventWishes Type = "cannotBeObtainedFromCharacterWeaponEventWishes"
 )

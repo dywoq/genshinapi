@@ -6,8 +6,8 @@
 	"region": "natlan",
 	"model": "mediumMale",
 	"version": {
-		"major": 6,
-		"minor": 0
+		"major": 5,
+		"minor": 7
 	},
-	"wish": "event-exclusive"
+	"wish": "eventExclusive"
 }
