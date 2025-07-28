@@ -12,21 +12,9 @@ import (
 )
 
 func New(n string, q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, wish wish.Type) (*Character, error) {
-	checks := map[statistics.Checker]struct{}{
-		q: {},
-		e: {},
-		w: {},
-		r: {},
-		m: {},
-		wish: {},
-		v: {},
-	}
-
-	for check := range checks {
-		err := check.Check()
-		if err != nil {
-			return &Character{}, err
-		}
+	ch := &Character{n, q, e, w, r, m, v, wish}
+	if !Correct(ch) {
+		return &Character{}, statistics.ErrCheckFailed
 	}
 	return &Character{n, q, e, w, r, m, v, wish}, nil
 }

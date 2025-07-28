@@ -20,3 +20,14 @@ type Character struct {
 	Version version.Version `json:"version"`
 	Wish    wish.Type       `json:"wish"`
 }
+
+func Correct(ch *Character) bool {
+	checks := getChecks(ch)
+	for check := range checks {
+		err := check.Check()
+		if err != nil {
+			return false
+		}
+	}
+	return true
+}
