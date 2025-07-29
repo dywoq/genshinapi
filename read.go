@@ -25,9 +25,6 @@ func readCharacters() ([]*character.Character, error) {
 			if err != nil {
 				return err
 			}
-			if !character.Correct(ch) {
-				return statistics.ErrCheckFailed
-			}
 			data = append(data, ch)
 		}
 		return nil
@@ -44,10 +41,13 @@ func processCharacterFile(file string) (*character.Character, error) {
 	if err != nil {
 		return &character.Character{}, nil
 	}
-	var c character.Character
+	c := &character.Character{}
 	err = json.Unmarshal(f, &c)
 	if err != nil {
 		return &character.Character{}, nil
 	}
-	return &c, nil
+	if !character.Correct(c) {
+		return &character.Character{}, statistics.ErrCheckFailed
+	}
+	return c, nil
 }
