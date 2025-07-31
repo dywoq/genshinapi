@@ -11,14 +11,15 @@ import (
 )
 
 type Character struct {
-	Name    string          `json:"name"`
-	Quality quality.Type    `json:"quality"`
-	Element element.Type    `json:"element"`
-	Weapon  weapon.Type     `json:"weapon"`
-	Region  region.Type     `json:"region"`
-	Model   model.Type      `json:"model"`
-	Version version.Version `json:"version"`
-	Wish    wish.Type       `json:"wish"`
+	Name       string          `json:"name"`
+	Quality    quality.Type    `json:"quality"`
+	Element    element.Type    `json:"element"`
+	Weapon     weapon.Type     `json:"weapon"`
+	Region     region.Type     `json:"region"`
+	Model      model.Type      `json:"model"`
+	Version    version.Version `json:"version"`
+	Wish       wish.Type       `json:"wish"`
+	Desciption string          `json:"description"`
 }
 
 func Correct(ch *Character) bool {

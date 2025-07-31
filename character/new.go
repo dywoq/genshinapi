@@ -11,10 +11,10 @@ import (
 	"github.com/dywoq/genshinapi/statistics/wish"
 )
 
-func New(n string, q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, wish wish.Type) (*Character, error) {
-	ch := &Character{n, q, e, w, r, m, v, wish}
+func New(n string, q quality.Type, e element.Type, w weapon.Type, r region.Type, m model.Type, v version.Version, wish wish.Type, description string) (*Character, error) {
+	ch := &Character{n, q, e, w, r, m, v, wish, description}
 	if !Correct(ch) {
 		return &Character{}, statistics.ErrCheckFailed
 	}
-	return &Character{n, q, e, w, r, m, v, wish}, nil
+	return ch, nil
 }
