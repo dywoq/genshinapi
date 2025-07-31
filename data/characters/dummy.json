@@ -9,5 +9,6 @@
 		"major": 5,
 		"minor": 7
 	},
-	"wish": "eventExclusive"
+	"wish": "eventExclusive",
+	"description": "just dummy"
 }
