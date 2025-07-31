@@ -47,4 +47,5 @@ var (
 	Version55 = Version{5, 5}
 	Version56 = Version{5, 6}
 	Version57 = Version{5, 7}
+	Version58 = Version{5, 8}
 )

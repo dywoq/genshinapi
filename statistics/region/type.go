@@ -5,18 +5,10 @@ import "github.com/dywoq/genshinapi/statistics"
 type Type string
 
 func (t Type) Check() error {
-	validTypes := map[Type]struct{}{
-		Fountaine: {},
-		Inazuma:   {},
-		Liyue:     {},
-		Mondstadt: {},
-		Natlan:    {},
-		Snezhnaya: {},
-		Sumeru:    {},
-	}
-
-	if _, ok := validTypes[t]; ok {
+	switch (t) {
+	case Fountaine, Inazuma, Liyue, Mondstadt, Natlan, Snezhnaya, Sumeru:
 		return nil
+	default:
+		return statistics.ErrCheckFailed
 	}
-	return statistics.ErrCheckFailed
 }

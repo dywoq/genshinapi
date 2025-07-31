@@ -5,16 +5,10 @@ import "github.com/dywoq/genshinapi/statistics"
 type Type string
 
 func (t Type) Check() error {
-	validTypes := map[Type]struct{}{
-		FiveStar:  {},
-		FourStar:  {},
-		ThreeStar: {},
-		TwoStar:   {},
-		OneStar:   {},
-	}
-
-	if _, ok := validTypes[t]; ok {
+	switch (t) {
+	case FiveStar, FourStar, ThreeStar, TwoStar, OneStar:
 		return nil
+	default:
+		return statistics.ErrCheckFailed
 	}
-	return statistics.ErrCheckFailed
 }

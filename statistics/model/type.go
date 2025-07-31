@@ -5,16 +5,10 @@ import "github.com/dywoq/genshinapi/statistics"
 type Type string
 
 func (t Type) Check() error {
-	validTypes := map[Type]struct{}{
-		TallMale:     {},
-		TallFemale:   {},
-		MediumMale:   {},
-		MediumFemale: {},
-		ShortFemale:  {},
-	}
-
-	if _, ok := validTypes[t]; ok {
+	switch (t) {
+	case TallMale, TallFemale, MediumMale, MediumFemale, ShortFemale:
 		return nil
+	default:
+		return statistics.ErrCheckFailed
 	}
-	return statistics.ErrCheckFailed
 }

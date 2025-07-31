@@ -5,15 +5,10 @@ import "github.com/dywoq/genshinapi/statistics"
 type Type string
 
 func (t Type) Check() error {
-	validTypes := map[Type]struct{}{
-		EventExclusive:             {},
-		Standard:                   {},
-		CannotBeObtainedFromWishes: {},
-		CannotBeObtainedFromCharacterWeaponEventWishes: {},
-	}
-
-	if _, ok := validTypes[t]; ok {
+	switch (t) {
+	case EventExclusive, Standard, CannotBeObtainedFromWishes, CannotBeObtainedFromCharacterWeaponEventWishes:
 		return nil
+	default:
+		return statistics.ErrCheckFailed
 	}
-	return statistics.ErrCheckFailed
 }
